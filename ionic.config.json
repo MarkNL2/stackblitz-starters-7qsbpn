@@ -1,0 +1,7 @@
+{
+  "name": "ionicSwiper",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

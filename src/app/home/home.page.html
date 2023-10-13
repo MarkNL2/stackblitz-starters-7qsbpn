@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inbox
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        Inbox
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div >
+  <swiper-container #swiper [slidesPerView]="1" [loop]="true" >
+    <swiper-slide class="slide-1">
+    <cdk-virtual-scroll-viewport itemSize="56">
+        <ion-list>
+          <app-message *cdkVirtualFor="let message of messages" [message]="message" > </app-message>
+        </ion-list>
+      </cdk-virtual-scroll-viewport>
+    </swiper-slide>
+    <swiper-slide class="slide-2">
+      TEST2
+    </swiper-slide>
+    <swiper-slide class="slide-3">
+      Test3
+    </swiper-slide>
+  </swiper-container>
+
+</div>
+
+</ion-content>
